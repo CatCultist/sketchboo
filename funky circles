@@ -1,0 +1,12 @@
+def setup():
+    size(255,255)
+    x = round(sin(mouseX))
+    print(x)
+
+
+
+def draw():
+    fill(round(mouseX-(mouseY)),255, mouseX)
+    ellipse(mouseX,mouseY,mouseY,mouseX)
+    fill(mouseY,mouseX*-mouseY,mouseX)
+    circle(mouseY,mouseX,mouseX-mouseY)
