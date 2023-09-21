@@ -1,0 +1,20 @@
+
+def setup():
+    size(500,500)
+    spheel = 100
+    print(spheel)
+    background(100,16,255)
+def draw():
+   
+    d=pow(pow((mouseY-100),2),.5)
+    p=pow(pow((mouseX-100),2),.5)
+    big=round(50/round((d/10+1)),1)
+    noStroke()
+    colorMode(HSB)
+    fill(pow(pow(mouseX+mouseY-100,2),.5),255,265-1.2*mouseY)
+    ellipse(100+150,mouseY+150,2*pow((pow(100,2)-pow(d,2)),.5),big)
+    fill(pow(pow(mouseX+mouseY-100,2),.5),255,255-mouseX)
+    #ellipse(mouseX+30,100+30,15,2*pow((pow(100,2)-pow(p,2)),.5))
+    2*pow((pow(100,2)-pow(d,2)),.5)
+    print(mouseY)
+    
