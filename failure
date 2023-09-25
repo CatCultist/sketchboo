@@ -1,0 +1,35 @@
+def setup():#this is how functions work
+    square(0,0,100)
+    size(500,500)
+    background(00,00,300)
+n=1
+d=0
+y=0
+m=0
+
+def draw():
+    print(1)
+    global n
+    global d
+    global m
+    global y
+    print(n)
+    n=n+1
+    m=pow(n,2)+n
+    y = m*n 
+    #stroke(mouseY,mouseX,mouseY-mouseX)
+    print(3)
+    stroke(250,250,0,25)
+    fill(n*d,250-n*d,n*d,50)
+    print(n)
+    circle (250+n*mouseY,250+y,50)
+    #circle (250-n,250+n*d,n)
+    #circle (250+n*d,250-n,n)
+    #circle (250-n*d,250-n,n)
+    if (n>20):
+        n=0
+        d=d+0.5
+    print("f")
+    
+   
+    #m=pow(n,2)+n# sketchboo
