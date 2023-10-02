@@ -1,0 +1,70 @@
+def setup():
+    size(500,500)
+    noStroke()
+orbit=0
+orvit=0
+pew=1
+big=50
+def draw():
+    key=0
+    global orbit
+    global orvit
+    global pew
+    global big
+    
+    orbit=orbit+pew*1
+    orvit=orvit+pew*2
+    if orbit>500:
+        orbit=0
+    if orbit<0:
+        orbit=500
+    if orvit>500:
+        orvit=0
+    if orvit<0:
+        orvit=500
+    fill(250,100,100)
+    circle(orbit,250,50)
+    fill(100,100,250)
+    circle(500-orvit,250,50)
+    if (orbit-50)<500-orvit<(orbit+50):
+        fill(200,100+random(100),0)
+        circle(orbit+random(-80,80),250+random(-80,80),random(80))
+    if orbit-10<500-orvit<orbit+10:
+        ellipse(((500-orvit)+orbit)/2,250,80,30)
+        pew=pew*-1
+        
+    print(pew)
+
+    
+    fill(0,0,0,20)
+    square(0,0,500)
+     
+    reg=0
+    greeg=0
+    blug=0
+    radius=pow(pow(mouseX-250,2)+pow(mouseY-250,2),.5)
+    if (key!=0):
+        print("hi")
+    if (mouseX>250):
+        reg=200
+    else:
+        greeg=200
+    if (mouseY>250):
+        blug=200
+    if (300>mouseX>200 and 300>mouseY>200):
+        blug=256
+        reg=0
+        greeg=0
+
+    if (radius>250):
+        reg=0
+        greeg=0
+        blug=0
+    
+
+    
+    speed=pow(pow(mouseY-pmouseY,2)+pow(pmouseX-mouseX,2),.5)
+    fill(reg,greeg,blug,256-speed)
+    
+    circle(mouseX,mouseY,speed)
+    key
