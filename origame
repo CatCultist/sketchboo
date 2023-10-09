@@ -1,0 +1,16 @@
+def mouseClicked():
+    global x
+    global y
+    global xb
+    global yb
+    
+    if(mouseY>250):
+        triangle(mouseX,mouseY,xb,yb,x,y)
+    else:
+        triangle(mouseX,mouseY,x,y,xb,yb)
+        
+    #triangle(mouseX,mouseY,mouseX,mouseY-200,250,200)
+    xb=x
+    yb=y
+    x=(mouseX)
+    y=(mouseY)
