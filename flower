@@ -1,0 +1,60 @@
+def setup():
+    size(500,500)
+    colorMode(HSB)
+def setup():
+    global cx, cy
+    global px, py
+    size(500, 500)
+    # fullScreen()
+    colorMode(HSB)
+    cx = width / 2
+    cy = height /2
+    px = cx
+    py = cy
+    
+cx = 0
+cy = 0
+r = 150
+angle2 = 0
+oph=0
+px = 0
+py = 0
+    
+def draw():    
+    global cx, cy
+    global px, py
+    global oph
+    num = (mouseY/10)+1
+    w=(PIE*200/num)
+    h=num*10
+    theta = TWO_PI / num
+    
+    oph=70*(1-pow(exp(1),-.2*num))
+    
+    background(0)
+    stroke(255)
+    strokeWeight(1)
+    translate(cx, cy)
+    
+    for i in range(num):
+        angle = theta * i
+        pushMatrix()
+        clr=(i+mouseX/2)
+        if(clr>256):
+            clr=clr-256
+        rotate(angle)
+        #c = (i / float(num)) * 255
+        #c = (c + mouseX) % 256
+    
+        fill(clr,200,200,200)
+        ellipse(0, 100, w, w*(PIE))
+        # line(0, 0, 0, 100)    
+        fill(256-clr,200,200)
+        square(0,0,oph)        
+        popMatrix()
+       
+        
+        #circle(0,0,i*10)
+    print(oph)
+    print(mouseX-250)
+    
